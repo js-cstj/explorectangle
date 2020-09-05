@@ -1,0 +1,139 @@
+@charset "UTF-8";
+html {
+  height: 100%;
+  font-size: 16px;
+  font-family: arial;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+}
+
+#interface {
+  min-height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: auto 1fr auto;
+      grid-template-rows: auto 1fr auto;
+}
+
+#interface > header, #interface > footer {
+  padding: .5em 1em;
+  background-color: #EEE;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#interface > header {
+  -webkit-box-ordinal-group: -999;
+      -ms-flex-order: -1000;
+          order: -1000;
+}
+
+#interface > header h1 {
+  margin: 0;
+}
+
+#interface > footer {
+  -webkit-box-ordinal-group: 1001;
+      -ms-flex-order: 1000;
+          order: 1000;
+  font-size: smaller;
+}
+
+#app {
+  padding: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: steelblue;
+  color: white;
+}
+
+.visuel {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: auto auto;
+      grid-template-rows: auto auto;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+}
+
+.visuel .rectangle {
+  -ms-grid-row: 1;
+  grid-row: 1;
+  -ms-grid-column: 2;
+  grid-column: 2;
+  border: 3px solid black;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-image: -moz-repeating-linear-gradient(-45deg, #f0f0f0 0, #f0f0f0 20px, #f8f8f8 20px, #f8f8f8 40px);
+}
+
+.visuel .largeur {
+  -ms-grid-row: 2;
+  grid-row: 2;
+  -ms-grid-column: 2;
+  grid-column: 2;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+.visuel .hauteur {
+  -ms-grid-row: 1;
+  grid-row: 1;
+  -ms-grid-column: 1;
+  grid-column: 1;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+.donnees {
+  border: 1px solid black;
+  padding: 1em;
+  border-radius: .5em;
+  -webkit-box-shadow: inset 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.3);
+          box-shadow: inset 0.1em 0.1em 0.2em rgba(0, 0, 0, 0.3);
+  margin-top: 1em;
+  background-color: white;
+  color: black;
+}
+
+.largeur::before {
+  content: "Largeur: ";
+}
+
+.hauteur::before {
+  content: "Hauteur: ";
+}
+
+.superficie::before {
+  content: "Superficie: ";
+}
+
+.perimetre::before {
+  content: "Périmètre: ";
+}
+
+.diagonale::before {
+  content: "Diagonale: ";
+}
+/*# sourceMappingURL=style.css.map */
