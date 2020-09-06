@@ -6,7 +6,7 @@ export default class App {
 	 * Méthode principale. Sera appelée après le chargement de la page.
 	 */
 	static main() {
-		const LARGEUR_VISUEL = 400;
+		const LARGEUR_VISUEL = 300;
 
 		// SAISIE ===================================================
 		var largeur, hauteur
@@ -32,31 +32,32 @@ export default class App {
 		
 		var rectangle = visuel.appendChild(document.createElement("div"));
 		rectangle.classList.add("rectangle");
-		rectangle.style.width = "400px";
-		rectangle.style.height = "300px";
-		
+		rectangle.style.width = LARGEUR_VISUEL+"px";
+		rectangle.style.height = (LARGEUR_VISUEL * hauteur / largeur) + "px";
+		rectangle.innerHTML = "PROPORTIONS";
+
 		var divHauteur = visuel.appendChild(document.createElement("div"));
 		divHauteur.classList.add("hauteur");
-		divHauteur.innerHTML = "3.0mm";
+		divHauteur.innerHTML = hauteur.toFixed(1) + "mm";
 		
 		var divLargeur = visuel.appendChild(document.createElement("div"));
 		divLargeur.classList.add("largeur");
-		divLargeur.innerHTML = "4.0mm";
+		divLargeur.innerHTML = largeur.toFixed(1) + "mm";
 		
 		var donnees = app.appendChild(document.createElement("div"));
 		donnees.classList.add("donnees");
 		
 		var divPerimetre = donnees.appendChild(document.createElement("div"));
 		divPerimetre.classList.add("perimetre");
-		divPerimetre.innerHTML = "14.0mm";
+		divPerimetre.innerHTML = perimetre.toFixed(1) + "mm";
 		
 		var divSuperficie = donnees.appendChild(document.createElement("div"));
 		divSuperficie.classList.add("superficie");
-		divSuperficie.innerHTML = "12.0mm²";
+		divSuperficie.innerHTML = superficie.toFixed(1) + "mm²";
 		
 		var divDiagonale = donnees.appendChild(document.createElement("div"));
 		divDiagonale.classList.add("diagonale");
-		divDiagonale.innerHTML = "5.0mm";
+		divDiagonale.innerHTML = diagonale.toFixed(1) + "mm";
 	}
 	/**
 	 * Méthode qui permet d'attendre le chargement de la page avant d'éxécuter le script principal

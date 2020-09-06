@@ -80,6 +80,16 @@ body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   background-image: -moz-repeating-linear-gradient(-45deg, #f0f0f0 0, #f0f0f0 20px, #f8f8f8 20px, #f8f8f8 40px);
+  color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .visuel .largeur {
