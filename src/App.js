@@ -25,64 +25,34 @@ export default class App {
 		// SAISIE ===================================================
 		var largeur, hauteur
 		// Demander à l'usager la largeur du rectangle
-		largeur = prompt("Quelle est la largeur du rectangle?", "4");
+
 		// Demander à l'usager s'il s'agit d'un carré
-		if (confirm("Est-ce un carré?")) {
+
 			// Si c'est un carré, on donne à la hauteur la même valeur que la largeur
-			hauteur = largeur;
-		} else {
+			
 			// Si ce n'est pas un carré, on demande à l'usager la hauteur du rectangle
-			hauteur = prompt("Quelle est la hauteur du rectangle?", "3");
-		}
+
 
 		// TRAITEMENT ===============================================
-		var perimetre, superficie, diagonale;
+		var perimetre, superficie, diagonale, hauteur_visuel;
 		// La largeur doit être transformée en float
-		largeur = parseFloat(largeur);
+
 		// La hauteur doit être transformée en float
-		hauteur = parseFloat(hauteur);
+
 		// On calcule le périmètre
-		perimetre = largeur * 2 + hauteur * 2;
+
 		// On calcule la superficie
-		superficie = largeur * hauteur;
+
 		// On calcule la diagonale
 		diagonale = Math.sqrt(largeur * largeur + hauteur * hauteur);
+		// On calcule la hauteur de l'aperçu
+		hauteur_visuel = LARGEUR_VISUEL * hauteur / largeur;
 
 		// AFFICHAGE ================================================
 		// Reproduire le HTML de resultat.html
 		// Déterminez vous-mêmes les variables à utiliser
 		var app = document.getElementById("app");
-		var visuel = app.appendChild(document.createElement("div"));
-		visuel.classList.add("visuel");
 		
-		var rectangle = visuel.appendChild(document.createElement("div"));
-		rectangle.classList.add("rectangle");
-		rectangle.style.width = LARGEUR_VISUEL+"px";
-		rectangle.style.height = (LARGEUR_VISUEL * hauteur / largeur) + "px";
-		rectangle.innerHTML = "PROPORTIONS";
-
-		var divHauteur = visuel.appendChild(document.createElement("div"));
-		divHauteur.classList.add("hauteur");
-		divHauteur.innerHTML = hauteur.toFixed(1) + "mm";
-		
-		var divLargeur = visuel.appendChild(document.createElement("div"));
-		divLargeur.classList.add("largeur");
-		divLargeur.innerHTML = largeur.toFixed(1) + "mm";
-		
-		var donnees = app.appendChild(document.createElement("div"));
-		donnees.classList.add("donnees");
-		
-		var divPerimetre = donnees.appendChild(document.createElement("div"));
-		divPerimetre.classList.add("perimetre");
-		divPerimetre.innerHTML = perimetre.toFixed(1) + "mm";
-		
-		var divSuperficie = donnees.appendChild(document.createElement("div"));
-		divSuperficie.classList.add("superficie");
-		divSuperficie.innerHTML = superficie.toFixed(1) + "mm²";
-		
-		var divDiagonale = donnees.appendChild(document.createElement("div"));
-		divDiagonale.classList.add("diagonale");
-		divDiagonale.innerHTML = diagonale.toFixed(1) + "mm";
 	}
 	/**
 	 * Méthode qui permet d'attendre le chargement de la page avant d'éxécuter le script principal
