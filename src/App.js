@@ -4,28 +4,53 @@
 export default class App {
 	/**
 	 * Méthode principale. Sera appelée après le chargement de la page.
+	 * 
+	 * À faire. Étapes :
+	 *   1) Reproduire à l'identique le HTML retrouvé dans le fichier resultat.html 
+	 *      (dans la section AFFICHAGE)
+	 *   2) Compléter la section SAISIE en se fiant aux commentaires
+	 *   3) Compléter la section TRAITEMENT en se fiant aux commentaires
+	 *   4) Adapter l'affichage pour utiliser les données à notre disposition
+	 *   5) Se réjouir du résultat
+	 * Note: Si vous n'avez pas encore vu les structures conditionnelles, 
+	 *       faites comme si le rectangle n'était jamais carré (pas de confirm).
+	 * Petit truc : Dans les prompt, mettez une valeur par défaut 
+	 *              pour éviter d'avoir à les rentrer à chaque essai.
 	 */
 	static main() {
+		// La largeur de l'apercu est toujours le même. On devra par contre calculer 
+		// sa hauteur pour avoir les bonnes proportions
 		const LARGEUR_VISUEL = 300;
 
 		// SAISIE ===================================================
 		var largeur, hauteur
+		// Demander à l'usager la largeur du rectangle
 		largeur = prompt("Quelle est la largeur du rectangle?", "4");
+		// Demander à l'usager s'il s'agit d'un carré
 		if (confirm("Est-ce un carré?")) {
+			// Si c'est un carré, on donne à la hauteur la même valeur que la largeur
 			hauteur = largeur;
 		} else {
+			// Si ce n'est pas un carré, on demande à l'usager la hauteur du rectangle
 			hauteur = prompt("Quelle est la hauteur du rectangle?", "3");
 		}
 
 		// TRAITEMENT ===============================================
 		var perimetre, superficie, diagonale;
+		// La largeur doit être transformée en float
 		largeur = parseFloat(largeur);
+		// La hauteur doit être transformée en float
 		hauteur = parseFloat(hauteur);
+		// On calcule le périmètre
 		perimetre = largeur * 2 + hauteur * 2;
+		// On calcule la superficie
 		superficie = largeur * hauteur;
+		// On calcule la diagonale
 		diagonale = Math.sqrt(largeur * largeur + hauteur * hauteur);
 
 		// AFFICHAGE ================================================
+		// Reproduire le HTML de resultat.html
+		// Déterminez vous-mêmes les variables à utiliser
 		var app = document.getElementById("app");
 		var visuel = app.appendChild(document.createElement("div"));
 		visuel.classList.add("visuel");

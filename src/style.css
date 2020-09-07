@@ -79,7 +79,7 @@ body {
   border: 3px solid black;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  background-image: -moz-repeating-linear-gradient(-45deg, #f0f0f0 0, #f0f0f0 20px, #f8f8f8 20px, #f8f8f8 40px);
+  background-image: repeating-linear-gradient(-45deg, #f0f0f0 0, #f0f0f0 20px, #f8f8f8 20px, #f8f8f8 40px);
   color: black;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -114,6 +114,9 @@ body {
       align-self: center;
   -ms-grid-column-align: center;
       justify-self: center;
+  -webkit-writing-mode: tb;
+      -ms-writing-mode: tb;
+          writing-mode: tb;
 }
 
 .donnees {

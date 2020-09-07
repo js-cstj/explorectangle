@@ -47,7 +47,7 @@ body {
 		grid-column: 2;
 		border: 3px solid black;
 		box-sizing: border-box;
-		background-image: -moz-repeating-linear-gradient(-45deg, #f0f0f0 0, #f0f0f0 20px, #f8f8f8 20px, #f8f8f8 40px);
+		background-image: repeating-linear-gradient(-45deg, #f0f0f0 0, #f0f0f0 20px, #f8f8f8 20px, #f8f8f8 40px);
 		color:black;
 		display: flex;
 		align-items: center;
@@ -64,6 +64,7 @@ body {
 		grid-column: 1;
 		align-self: center;
 		justify-self: center;
+		writing-mode: tb;
 	}
 }
 .donnees {
