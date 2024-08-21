@@ -1,0 +1,18 @@
+#interface, .interface {
+	min-height: 100%;
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+	& > header, & > footer {
+		padding: .5em 1em;
+		background-color: hsl(var(--h), var(--s), var(--d));
+		color: hsl(var(--h), var(--s), 100%);
+		display: flex;
+		justify-content: space-between;
+	}
+	& > header {
+		order: -1000;
+	}
+	& > footer {
+		order: 1000;
+	}
+}
